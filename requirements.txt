@@ -16,7 +16,7 @@ debugpy==1.8.13
 distro==1.9.0
 dnspython==2.7.0
 docstring_parser==0.16
-duckduckgo_search==2025.4.1
+duckduckgo_search==8.0.1
 email_validator==2.2.0
 fastapi==0.115.11
 fastapi-cli==0.0.7
@@ -61,7 +61,7 @@ packaging==24.2
 pandas==2.2.3
 pgvector==0.4.0
 pillow==11.1.0
-primp==0.14.0
+primp==0.15.0
 proto-plus==1.26.1
 protobuf==5.29.4
 psycopg==3.2.6
