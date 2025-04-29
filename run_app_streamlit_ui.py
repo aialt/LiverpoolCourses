@@ -101,9 +101,9 @@ def main():
     ####################################################################
     #set_page_config()
     #set_png_as_page_bg('asset/liverpool_logo.jpg')
-    st.title("Athena: Liverpool Uni Assistant")
+    st.title("University of Liverpool Assistant ")
     st.subheader("Your AI Guide for Majors & Academic Success. How can I assist you today?")
-    st.sidebar.image('asset/logo.jpg')
+    #st.sidebar.image('asset/logo.jpg')
 
     ####################################################################
     # Model selector
