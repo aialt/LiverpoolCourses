@@ -29,13 +29,7 @@ pip install -r requirements.txt
 
 > Install docker according to this doc [Docker](https://docs.docker.com/get-started/get-docker/)
 
-### 4. Run PgVector ()
-
-
-### 5. Set OpenAI Key
-
-
-### 6.Run without `docker-compose`
+### 4.Run without `docker-compose`
 1. Set OpenAI key 
 ```shell
 export OPENAI_API_KEY="****"
@@ -59,7 +53,7 @@ docker run -d \
 streamlit run ./run_app_streamlit_ui.py
 ```
 
-### 7. Run with `docker-compose`
+### 5. Run with `docker-compose`
 1. Setup `.env` file
 ```shell
 cp .env.example .env
@@ -75,5 +69,5 @@ OPENAI_API_KEY=your-openai-key
 docker-compose -f docker-compose.dev.yml up --build -d
 ```
 
-### Access to Application
+### 6. Access to Application
 Open the browser and go to: `http://localhost:8501`
