@@ -134,7 +134,7 @@ def main():
     ):
         logger.info("---*--- Creating new Agentic RAG  ---*---")
         agentic_rag_agent = get_rag_assistant(model_id=model_id)
-        agentic_rag_agent.knowledge.load(recreate=True)#re create db
+        agentic_rag_agent.knowledge.load(recreate=False)#re create db
         st.session_state["agentic_rag_agent"] = agentic_rag_agent
         st.session_state["current_model"] = model_id
     else:

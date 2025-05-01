@@ -21,6 +21,7 @@ python3 -m venv test_env
 
 ```shell
 source ./test_env/bin/activate
+cd rag_app/
 pip install -r requirements.txt
 ```
 
@@ -28,8 +29,13 @@ pip install -r requirements.txt
 
 > Install docker according to this doc [Docker](https://docs.docker.com/get-started/get-docker/)
 
-### 4. Run PgVector
+### 4.Run without `docker-compose`
+1. Set OpenAI key 
+```shell
+export OPENAI_API_KEY="****"
+```
 
+2. Run the `container` of PostgreSQL + PgVector
 ```shell
 docker run -d \
   -e POSTGRES_DB=ai \
@@ -42,16 +48,26 @@ docker run -d \
   agnohq/pgvector:16
 ```
 
-### 5. Set OpenAI Key
-
-```shell
-export OPENAI_API_KEY="****"
-```
-
-### 6.Run
-
-Run with local streamlit ui app
+2. Run with local streamlit ui app
 ```shell
 streamlit run ./run_app_streamlit_ui.py
 ```
 
+### 5. Run with `docker-compose`
+1. Setup `.env` file
+```shell
+cp .env.example .env
+```
+
+2. In `.env` file, set the OpenAI key
+```
+OPENAI_API_KEY=your-openai-key
+```
+
+3. Run the containers with `docker-compose`
+```shell
+docker-compose -f docker-compose.dev.yml up --build -d
+```
+
+### 6. Access to Application
+Open the browser and go to: `http://localhost:8501`
