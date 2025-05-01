@@ -56,7 +56,7 @@ import streamlit as st
 from PIL import Image
 
 
-db_url = "postgresql+psycopg://ai:ai@localhost:5532/ai"
+db_url = "postgresql+psycopg://ai:ai@rag_database:5432/ai"
 
 
 def get_rag_assistant(
