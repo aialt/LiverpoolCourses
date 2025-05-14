@@ -108,20 +108,21 @@ def main():
     ####################################################################
     # Model selector
     ####################################################################
-    model_options = {
-        "o3-mini": "openai:o3-mini",
-        "gpt-4o": "openai:gpt-4o",
-        "gemini-2.0-flash-exp": "google:gemini-2.0-flash-exp",
-        #"claude-3-5-sonnet": "anthropic:claude-3-5-sonnet-20241022",
-        "llama-3.3-70b": "groq:llama-3.3-70b-versatile",
-    }
-    selected_model = st.sidebar.selectbox(
-        "Select a model",
-        options=list(model_options.keys()),
-        index=0,
-        key="model_selector",
-    )
-    model_id = model_options[selected_model]
+    # model_options = {
+    #     "o3-mini": "openai:o3-mini",
+    #     "gpt-4o": "openai:gpt-4o",
+    #     "gemini-2.0-flash-exp": "google:gemini-2.0-flash-exp",
+    #     #"claude-3-5-sonnet": "anthropic:claude-3-5-sonnet-20241022",
+    #     "llama-3.3-70b": "groq:llama-3.3-70b-versatile",
+    # }
+    # selected_model = st.sidebar.selectbox(
+    #     "Select a model",
+    #     options=list(model_options.keys()),
+    #     index=0,
+    #     key="model_selector",
+    # )
+    # model_id = model_options[selected_model]
+    st.sidebar.markdown("#### 🤖 Model: gpt-4o")
 
     ####################################################################
     # Initialize Agent
@@ -130,13 +131,13 @@ def main():
     if (
         "agentic_rag_agent" not in st.session_state
         or st.session_state["agentic_rag_agent"] is None
-        or st.session_state.get("current_model") != model_id
+        #or st.session_state.get("current_model") != model_id
     ):
         logger.info("---*--- Creating new Agentic RAG  ---*---")
-        agentic_rag_agent = get_rag_assistant(model_id=model_id)
+        agentic_rag_agent = get_rag_assistant("o3-mini")
         agentic_rag_agent.knowledge.load(recreate=False)#re create db
         st.session_state["agentic_rag_agent"] = agentic_rag_agent
-        st.session_state["current_model"] = model_id
+        #st.session_state["current_model"] = model_id
     else:
         agentic_rag_agent = st.session_state["agentic_rag_agent"]
 

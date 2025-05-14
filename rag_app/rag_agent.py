@@ -43,6 +43,7 @@ from rich.prompt import Prompt
 from agno.memory.db.postgres import PgMemoryDb
 from agno.tools.duckduckgo import DuckDuckGoTools
 
+#from agno.models.deepseek import DeepSeek
 
 from textwrap import dedent
 from pathlib import Path
@@ -170,6 +171,11 @@ def get_rag_assistant(
             \
             """),
         instructions=[
+            "   - Normalize vague or short queries like 'I want to study AI' into specific, well-defined search prompts.",
+            "   - Always assume that vague educational queries refer to Liverpool University unless stated otherwise.",
+            "   - Examples of query expansion:",
+            "       - 'I want to learn AI' → 'Show me all AI-related programs at University of Liverpool'",
+            "       - 'I want to learn cyberSecurity' → 'Show me all cyberSecurity-related programs at Liverpool University'",
             "1. Intent Analysis & Contextual Understanding:",
             "   - **ALWAYS** begin by analyzing the user's current query within the context of the entire conversation history.",
             "   - Use the `get_chat_history` tool to understand the user's previous questions, preferences, and any prior clarifications",
