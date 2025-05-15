@@ -122,7 +122,7 @@ def main():
     #     key="model_selector",
     # )
     # model_id = model_options[selected_model]
-    st.sidebar.markdown("#### 🤖 Model: gpt-4o")
+    st.sidebar.title("   🤖 Powered by LLMs")
 
     ####################################################################
     # Initialize Agent
