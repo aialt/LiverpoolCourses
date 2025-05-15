@@ -1,4 +1,6 @@
-# MajorSelectRAG
+# Education AI Agent
+
+Simply, start with installing docker.
 
 ## Environmental requirements
 
